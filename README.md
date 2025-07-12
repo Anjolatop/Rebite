@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌍 Rebite: Smart Food Rescue Platform
 
 **Rescue food. Respect values. Reinvent access.**
@@ -179,3 +180,6 @@ Rebite is designed to:
 ---
 
 **Rebite** — Making food rescue smart, sustainable, and accessible for everyone. 
+=======
+# Rebite
+>>>>>>> af791cbadabfda92709a38d9a24ddbf87f02d0a9
