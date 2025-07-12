@@ -2,53 +2,141 @@
 
 import { motion } from 'framer-motion';
 import { 
+  Globe, 
   Heart, 
   Leaf, 
   Users, 
   Star, 
-  ArrowRight, 
-  CheckCircle,
+  Award, 
+  TrendingUp, 
+  Shield,
   Smartphone,
   MapPin,
   Clock,
   Zap,
+  Target,
   Gift,
   Sparkles,
+  ArrowRight,
+  CheckCircle,
   Play,
   Download,
-  Globe,
-  TrendingUp,
-  Shield,
-  Award
+  ArrowLeft
 } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 
-export default function HomePage() {
+export default function FeaturesPage() {
   const features = [
     {
-      icon: <Heart className="w-6 h-6" />,
-      title: "Save Food, Save Lives",
-      description: "Rescue surplus food and reduce waste while helping communities",
-      color: "from-rose-500 to-pink-600"
+      icon: <Globe className="w-8 h-8" />,
+      title: "Global Impact",
+      description: "Join millions reducing food waste worldwide",
+      color: "from-blue-500 to-indigo-600",
+      details: [
+        "Real-time impact tracking",
+        "Global community network",
+        "Cross-border food rescue",
+        "International partnerships"
+      ]
     },
     {
-      icon: <Leaf className="w-6 h-6" />,
-      title: "Eco-Friendly Impact",
-      description: "Reduce carbon footprint and environmental waste",
-      color: "from-emerald-500 to-green-600"
+      icon: <Heart className="w-8 h-8" />,
+      title: "Health First",
+      description: "AI-powered nutrition recommendations",
+      color: "from-rose-500 to-pink-600",
+      details: [
+        "Personalized nutrition insights",
+        "Dietary preference matching",
+        "Allergen detection",
+        "Health impact scoring"
+      ]
     },
     {
-      icon: <Users className="w-6 h-6" />,
-      title: "Community Building",
-      description: "Connect with local vendors and food enthusiasts",
+      icon: <Leaf className="w-8 h-8" />,
+      title: "Eco-Friendly",
+      description: "Sustainable choices for a better planet",
+      color: "from-emerald-500 to-green-600",
+      details: [
+        "Carbon footprint tracking",
+        "Waste reduction metrics",
+        "Sustainable packaging options",
+        "Environmental impact reports"
+      ]
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Community",
+      description: "Connect with local farmers and restaurants",
+      color: "from-purple-500 to-violet-600",
+      details: [
+        "Local vendor network",
+        "Community events",
+        "Shared success stories",
+        "Neighborhood partnerships"
+      ]
+    },
+    {
+      icon: <Star className="w-8 h-8" />,
+      title: "Quality Assured",
+      description: "Rigorous quality checks and safety standards",
+      color: "from-amber-500 to-orange-600",
+      details: [
+        "Food safety protocols",
+        "Quality verification system",
+        "Freshness guarantees",
+        "Safety certifications"
+      ]
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Trust & Security",
+      description: "Secure transactions and data protection",
+      color: "from-slate-500 to-gray-600",
+      details: [
+        "End-to-end encryption",
+        "Secure payment processing",
+        "Privacy protection",
+        "Trust verification system"
+      ]
+    }
+  ];
+
+  const benefits = [
+    {
+      icon: <Smartphone className="w-8 h-8" />,
+      title: "Smart Notifications",
+      description: "Get alerts for fresh food available in your area",
+      color: "from-orange-500 to-red-500"
+    },
+    {
+      icon: <MapPin className="w-8 h-8" />,
+      title: "Local Discovery",
+      description: "Find the best food deals near you with GPS tracking",
       color: "from-blue-500 to-indigo-600"
     },
     {
-      icon: <Star className="w-6 h-6" />,
-      title: "Quality Assured",
-      description: "AI-powered quality checks and safety standards",
-      color: "from-amber-500 to-orange-600"
+      icon: <Clock className="w-8 h-8" />,
+      title: "Real-time Updates",
+      description: "Live inventory updates and availability tracking",
+      color: "from-green-500 to-emerald-600"
+    },
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: "Instant Booking",
+      description: "Reserve and pay for food items in seconds",
+      color: "from-purple-500 to-violet-600"
+    },
+    {
+      icon: <Gift className="w-8 h-8" />,
+      title: "Rewards Program",
+      description: "Earn points for every meal saved and redeemed",
+      color: "from-pink-500 to-rose-600"
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Impact Tracking",
+      description: "Monitor your contribution to food waste reduction",
+      color: "from-teal-500 to-cyan-600"
     }
   ];
 
@@ -59,68 +147,21 @@ export default function HomePage() {
     { number: "95%", label: "Satisfaction", icon: <Star className="w-5 h-5" /> }
   ];
 
-  const benefits = [
-    {
-      icon: <Smartphone className="w-8 h-8" />,
-      title: "Smart Notifications",
-      description: "Get alerts for fresh food available in your area"
-    },
-    {
-      icon: <MapPin className="w-8 h-8" />,
-      title: "Local Discovery",
-      description: "Find the best food deals near you with GPS tracking"
-    },
-    {
-      icon: <Clock className="w-8 h-8" />,
-      title: "Real-time Updates",
-      description: "Live inventory updates and availability tracking"
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Instant Booking",
-      description: "Reserve and pay for food items in seconds"
-    },
-    {
-      icon: <Gift className="w-8 h-8" />,
-      title: "Rewards Program",
-      description: "Earn points for every meal saved and redeemed"
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Safety First",
-      description: "Quality checks and food safety standards"
-    }
-  ];
-
-  const handleWatchDemo = () => {
-    alert('Watch Demo button clicked! This would open a demo video.');
-  };
-
-  const handleReserveNow = () => {
-    alert('Reserve Now button clicked! This would open the reservation form.');
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
       {/* Navigation */}
       <nav className="bg-white/80 backdrop-blur-md border-b border-orange-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="flex items-center space-x-2"
-            >
+            <Link href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
                 <Heart className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-bold text-gray-900">Rebite</span>
-            </motion.div>
+            </Link>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/features" className="text-gray-600 hover:text-orange-600 transition-colors">
-                Features
-              </Link>
+              <Link href="/features" className="text-orange-600 font-medium">Features</Link>
               <Link href="/auth/login" className="text-gray-600 hover:text-orange-600 transition-colors">
                 Login
               </Link>
@@ -136,106 +177,51 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium mb-6"
             >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium mb-6"
-              >
-                <Sparkles className="w-4 h-4 mr-2" />
-                Smart Food Rescue Platform
-              </motion.div>
-              
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Save Food,{' '}
-                <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                  Save Lives
-                </span>
-              </h1>
-              
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Join the movement to reduce food waste and connect communities through smart technology. 
-                Discover fresh, affordable food while making a positive impact on the environment.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                              <Link 
+              <Sparkles className="w-4 h-4 mr-2" />
+              Comprehensive Features
+            </motion.div>
+            
+            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              Everything You Need to{' '}
+              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                Rescue Food
+              </span>
+            </h1>
+            
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Discover our comprehensive suite of features designed to make food rescue 
+              effortless, efficient, and impactful for everyone involved.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
                 href="/auth/register"
                 className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center group"
               >
-                Start Rescuing Food
+                Start Using Features
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
-                
-                <button 
-                  onClick={handleWatchDemo}
-                  className="border-2 border-orange-200 text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center group cursor-pointer"
-                >
-                  <Play className="w-5 h-5 mr-2" />
-                  Watch Demo
-                </button>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="relative"
-            >
-              <div className="bg-gradient-to-br from-orange-100 to-red-100 rounded-3xl p-8 shadow-2xl">
-                <div className="bg-white rounded-2xl p-6 shadow-lg">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center">
-                        <Heart className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900">Fresh Food Alert</h3>
-                        <p className="text-sm text-gray-500">Local Bakery</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-2xl font-bold text-orange-600">$12</p>
-                      <p className="text-sm text-gray-500 line-through">$25</p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-600">Fresh Bread</span>
-                      <span className="text-green-600 font-medium">Available</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-600">Pastries</span>
-                      <span className="text-green-600 font-medium">Available</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-600">Cakes</span>
-                      <span className="text-orange-600 font-medium">Limited</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6 pt-4 border-t border-gray-100">
-                    <button 
-                      onClick={handleReserveNow}
-                      className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 rounded-xl font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-200 cursor-pointer"
-                    >
-                      Reserve Now
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+              
+              <button className="border-2 border-orange-200 text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-200 flex items-center justify-center group">
+                <Play className="w-5 h-5 mr-2" />
+                Watch Demo
+              </button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -269,7 +255,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Main Features Section */}
       <section className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -279,7 +265,7 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Rebite?
+              Core Features
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our platform combines cutting-edge technology with a mission to reduce food waste and build stronger communities.
@@ -301,14 +287,23 @@ export default function HomePage() {
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                <p className="text-gray-600 leading-relaxed mb-6">{feature.description}</p>
+                
+                <ul className="space-y-3">
+                  {feature.details.map((detail, detailIndex) => (
+                    <li key={detailIndex} className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">{detail}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Smart Features Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -334,7 +329,7 @@ export default function HomePage() {
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 className="flex items-start space-x-4 p-6 rounded-xl hover:bg-orange-50 transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className={`w-12 h-12 bg-gradient-to-r ${benefit.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
                   <div className="text-white">
                     {benefit.icon}
                   </div>
@@ -343,6 +338,67 @@ export default function HomePage() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{benefit.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              How It Works
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Get started in minutes and start making a difference today.
+            </p>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Create Your Profile",
+                description: "Set your preferences, dietary needs, and sustainability goals.",
+                icon: <Target className="w-8 h-8" />
+              },
+              {
+                step: "02",
+                title: "Discover Local Food",
+                description: "Browse AI-recommended rescued food from nearby vendors.",
+                icon: <MapPin className="w-8 h-8" />
+              },
+              {
+                step: "03",
+                title: "Order & Impact",
+                description: "Place orders and track your positive impact on food waste.",
+                icon: <TrendingUp className="w-8 h-8" />
+              }
+            ].map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2, duration: 0.6 }}
+                className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-orange-100"
+              >
+                <div className="absolute top-4 right-4 text-4xl font-bold text-orange-200">
+                  {step.step}
+                </div>
+                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-6">
+                  <div className="text-white">
+                    {step.icon}
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{step.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -358,26 +414,26 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to Make a Difference?
+              Ready to Experience These Features?
             </h2>
             <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
-              Join thousands of users who are already saving food and building stronger communities.
+              Join thousands of users who are already saving food and building stronger communities with our comprehensive features.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/auth/register"
                 className="bg-white text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center group"
-                onClick={() => {
-                  console.log('Start Your Journey button clicked');
-                  alert('Navigating to registration page...');
-                }}
               >
                 Start Your Journey
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center">
-                Learn More
-              </button>
+              <Link 
+                href="/"
+                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-orange-600 transition-all duration-200 flex items-center justify-center group"
+              >
+                <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+                Back to Home
+              </Link>
             </div>
           </motion.div>
         </div>

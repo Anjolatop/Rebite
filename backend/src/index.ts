@@ -17,6 +17,7 @@ import orderRoutes from './routes/orders';
 import pointsRoutes from './routes/points';
 import recipeRoutes from './routes/recipes';
 import ussdRoutes from './routes/ussd';
+import dashboardRoutes from './routes/dashboard';
 
 // Import middleware
 import { authenticateToken } from './middleware/auth';
@@ -76,6 +77,7 @@ app.use('/api/orders', authenticateToken, orderRoutes);
 app.use('/api/points', authenticateToken, pointsRoutes);
 app.use('/api/recipes', recipeRoutes);
 app.use('/api/ussd', ussdRoutes);
+app.use('/api/dashboard', dashboardRoutes);
 
 // Error handling middleware
 app.use(errorHandler);
